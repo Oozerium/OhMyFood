@@ -1,0 +1,277 @@
+*{
+    margin: 0;  
+}
+
+html
+{
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family: 'Raleway', sans-serif;
+    font-family: 'Roboto', sans-serif;
+}
+
+a{
+    text-decoration: none;
+}
+a:link{
+    color: inherit;
+}
+
+a:visited{
+    color: inherit;
+}
+
+.fa-thin{
+    font-family: "Font Awesome 6 Free"; 
+}
+
+.header__logo{
+    width: 170px;
+    display: block;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+
+.localisation{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 30px;
+    background-color: #eaeaea;
+    height: 50px;
+    box-shadow: inset 0 5px 10px -10px;
+    .fa-location-dot{
+        display: flex;
+        margin-right: 25px;
+    }
+    h2{
+        font-size: 16px;
+        font-weight: bold;
+    }   
+}
+
+$couleur-primaire: #f6f6f6;
+$couleur-secondaire: #9356dc;
+
+@mixin texte-moyen{
+    font-size: 18px; 
+}
+
+@mixin ombre {
+    box-shadow: 0px 5px 15px  #d4d4d4   ;
+}
+
+.bloc-haut{
+    background-color: $couleur-primaire;
+    padding-top: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    h1{
+        margin: 0 50px;
+        margin-bottom: 10px;
+        font-weight: 800;
+        font-size: 25px;
+        text-align: center;
+     }
+     p{
+        margin: 0 30px;
+        text-align: center;
+        @include texte-moyen() ;
+        color: #4d4d4d;
+     }    
+}
+
+.explorer{
+    width: 210px;
+    height: 50px;
+    margin-top: 25px;
+    margin-bottom: 50px;
+    background: linear-gradient(to bottom right, #f074da, $couleur-secondaire ); /* dégradé couleur */
+    border-radius: 50px;
+    @include ombre();
+   a{  
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       width: 100%;
+       height: 100%;
+       border-radius: 50px;
+       p{
+           color: white;
+           font-size: 15px;
+           margin: 0;
+        }
+    }
+}
+.explorer:hover{
+    filter: brightness(1.05);
+    transition: all 500ms;
+    box-shadow: 0px 5px 15px  #a7a7a7   ;
+}
+
+
+.fonctionnement{
+    margin: 0 20px;
+    h2{
+        margin: 50px 0 30px 0;
+        font-weight: 800;
+    }
+    ul{
+        list-style-type: none;
+        padding: 0;
+        li {
+            counter-increment: list;
+            background-color: $couleur-primaire;
+            
+            margin-bottom: 20px;
+            margin-left: 12px;
+            border-radius: 15px;
+            height: 75px;
+            @include ombre();
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            font-weight: 600;
+          }
+        li::before {
+            content: counter(list);
+            background-color: $couleur-secondaire;
+            color: white;
+            border-radius: 50%; 
+            padding: 6px 8px 0.4px 8px;
+            margin-left: -13px;
+            font-weight: 300;
+        }
+        .fa-solid{
+            margin-left: 20px;
+            margin-right: 25px;
+            color: #7e7e7e;
+            font-size: 19px;
+        }
+        .fa-store{
+            color: $couleur-secondaire;
+        }
+        .fonctionnement--violet{
+            background-color: #f5edff;
+        }
+    }
+}
+
+#restaurant{
+    padding: 50px 20px 60px 20px;
+    margin-top: 50px;
+    background-color: $couleur-primaire;
+    h1{
+        font-size: 24px;
+        font-weight: 800;
+        margin-bottom: 20px;
+    }
+
+    .cartes{
+        display: flex;
+        flex-direction: column;
+        border-radius: 20px;
+        height: 240px;
+        @include ombre();
+        background-color: #fff;
+        padding-bottom: 10px;
+        margin-bottom: 20px;
+        position: relative;
+        .fa-heart{
+            position:absolute;
+            right: 40px;
+            margin-top: 200px;
+            font-size: 23px;
+            transform: scale(1, 1.2) ;
+            transition: font-weight 2s, color 3s;
+        }
+         .fa-solid{
+            
+            
+            background: linear-gradient(to top right, #f074da, $couleur-secondaire );
+            opacity: 0;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color:transparent;
+            transition: all 300ms ease-in-out;
+        }
+        .fa-solid:hover{
+            opacity: 1;
+        }
+        h2{
+            margin-top: 15px;
+            @include texte-moyen();
+            font-weight: 800;
+            margin-left: 15px;
+        }
+        h4{
+            @include texte-moyen();
+            font-weight: 400;
+            margin-top: 5px;
+            margin-left: 15px;
+        }
+    }
+    .cartes:hover{
+        filter: brightness(1.05);
+        transition: all 500ms;
+        box-shadow: 0px 5px 15px  #a7a7a7   ;
+    }
+
+    img{
+        object-fit:cover; /* déplacer l'image affichée dans la div possible ? */
+        width: 100%;
+        height: 175px;
+        border-radius: 20px 20px 0 0;
+    }
+}
+
+   .cartes--nouveau{
+            position: absolute;
+            right: 30px;
+            margin-top: 15px;
+            background-color: #99E2D0;            ;
+            color: #008766;
+            font-size: 12px;
+            height: 30px;
+            width: 80px;
+            text-align: center;
+            line-height: 33px;
+            border-radius: 2px;
+            h3{
+                font-weight: 600;  
+            } 
+        }
+        footer{
+            background-color: #353535;
+            color: white;
+            padding-left: 20px;
+            padding-bottom: 20px;
+            img{
+                filter: invert(100%);
+                width: 100px;
+                margin: 20px 0px;
+            }
+            ul{
+                list-style-type: none;
+                padding: 0;
+                font-size: 15px;
+            }
+            li{
+                padding-bottom: 10px;
+            }
+            .fa-solid{
+                font-size: 13px;
+                transform: scale(0.9, 1);
+                margin-right: 10px;
+            }
+            .fa-handshake-angle{
+                position: relative;
+                right: 2px;
+                margin-right: 5px;
+                transform: scale(0.7, 1);
+            }
+        }
