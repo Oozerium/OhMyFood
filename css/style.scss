@@ -36,6 +36,8 @@ a:visited{
     position:absolute;
     animation: disparait 2s 1 linear;
     animation-fill-mode: forwards;
+    -webkit-animation: disparait 2s 1 linear;
+    -webkit-animation-fill-mode: forwards;
     pointer-events: none;
 }
 
