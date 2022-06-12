@@ -14,16 +14,16 @@
   padding-left: 20px;
 }
 
-.restaurant-cartes {
+.restaurant__cartes {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
   padding-left: 20px;
 }
-.restaurant-cartes .cartes {
+.restaurant__cartes .cartes {
   margin-bottom: 0px;
 }
-.restaurant-cartes a {
+.restaurant__cartes a {
   width: 47.9%;
   margin-bottom: 20px;
   margin-right: 20px;

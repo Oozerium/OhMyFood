@@ -1,10 +1,19 @@
 *{
     margin: 0;  
+    padding: 0;
 }
 $couleur-primaire: #f6f6f6;
 $couleur-secondaire: #9356dc;
 $couleur-tertiaire: #f074da;
 $couleur-quaternaire: #99E2D0;
+
+@mixin texte-moyen{
+    font-size: 18px; 
+}
+
+@mixin ombre {
+    box-shadow: 0px 5px 15px  #d4d4d4   ;
+}
 
 html
 {
@@ -15,6 +24,7 @@ html
 body{
     font-family: 'Raleway', sans-serif;
     font-family: 'Roboto', sans-serif;
+    
 }
 
 a{
@@ -28,21 +38,158 @@ a:visited{
     color: inherit;
 }
 
+.fa-thin{
+    font-family: "Font Awesome 6 Free"; 
+}
+
+.header__logo{
+    width: 170px;
+    display: block;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+section{
+    position: relative;
+}
+.lpdg {
+    height: 230px;
+    width: 100%;
+    object-fit: cover;
+    position: absolute;
+}
+
+.menu{
+    display: flex;
+    flex-direction: column;
+    background-color: $couleur-primaire;
+    top: 200px;
+    position: relative;
+    padding: 0 20px 0 20px;
+    margin-bottom:200px;
+    border-radius: 30px 30px 0 0;   
+    h1{
+        font-family: 'Shrikhand', cursive;
+        font-weight: 200;
+        font-size: 28px;
+        margin: 30px 40px 30px 0;
+    } 
+    .titre{
+        position: relative;
+        margin-bottom: 2rem;
+        color: #353535;
+        font-size: 1.125rem;
+        font-weight: 300;
+        text-transform: uppercase;
+    }
+    .titre::after{
+        content: '' ;
+        position: absolute;
+        left: 0;
+        bottom: -0.5rem;
+        width: 2.5em;
+        height: 4px;
+        background-color: $couleur-quaternaire;
+
+    }
+    h3{
+        font-size: 18px;
+        font-weight: 400;
+        margin-bottom: 10px;
+
+    }
+    .fa-heart{
+        position:absolute;
+        right: 25px;
+        top: 32px;
+        font-size: 22px;
+        transform: scale(1, 1.2) ;
+        transition: font-weight 2s, color 3s;
+    }
+    .fas{
+        background: linear-gradient(to top right, $couleur-tertiaire, $couleur-secondaire );
+        opacity: 0;
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color:transparent;
+        transition: all 300ms ease-in-out;
+    }
+    .fas:hover{
+        opacity: 1;
+    }
+}
+
+.menu__liste{
+    display: flex;
+    flex-direction: column;
+    gap: 1.125rem;
+    .menu__carte{
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        cursor: pointer;
+        background-color: white;
+        border-radius: 15px;
+        padding: 1.125rem;
+        @include ombre();
+        animation: slide in 4s cubic-bezier(0.5, 1, 0.89, 1) backward;
+        .menu__carte--body{
+            flex: 1;
+            min-width: 0;
+            
+            .menu__carte--titre{
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                margin-bottom: 5px;
+            }
+        }
+            .menu__carte--info{
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+                .menu__carte--description{
+                    flex: 1;
+                    font-size: 1rem;
+                }
+                .menu__carte--prix{
+                    font-weight: 500;
+                    
+                }   
+            }          
+            .menu__carte--check{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 4.5rem;
+                margin-right: -4.5rem;
+                background-color: $couleur-quaternaire;
+                color: white;
+                font-size: 1.5rem;
+                transition: margin .3s cubic-bezier(0.11, 0, 0.5, 0);
+                .menu__carte--check-icone{
+                    transition: transform .2s .1s cubic-bezier(0.11, 0, 0.5, 0);
+                }
+            }    
+    } 
+}
 
 footer{
     background-color: #353535;
     color: white;
     padding-left: 20px;
     padding-bottom: 20px;
-    img{
-        filter: invert(100%);
-        width: 100px;
-        margin: 20px 0px;
+    padding: 20px 20px 20px 20px;
+    .footer__logo{
+        font-family: 'Shrikhand';
+        font-size: 1.25rem;
+        font-weight: 400;
     }
     ul{
         list-style-type: none;
         padding: 0;
         font-size: 15px;
+        margin-top: 20px;
     }
     li{
         padding-bottom: 10px;
