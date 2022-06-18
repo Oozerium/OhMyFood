@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   margin: 0;
   padding: 0;
@@ -27,6 +28,17 @@ a:visited {
 
 .fa-thin {
   font-family: "Font Awesome 6 Free";
+}
+
+.fleche-gauche {
+  position: absolute;
+  top: 25px;
+  left: 20px;
+  font-size: 20px;
+}
+.fleche-gauche:hover {
+  transform: scale(1.1);
+  transition-duration: 500ms;
 }
 
 .header__logo {
@@ -62,7 +74,7 @@ section {
   font-family: "Shrikhand", cursive;
   font-weight: 200;
   font-size: 28px;
-  margin: 30px 40px 30px 0;
+  margin: 30px 40px 0 0;
 }
 .menu .titre {
   position: relative;
@@ -71,6 +83,7 @@ section {
   font-size: 1.125rem;
   font-weight: 300;
   text-transform: uppercase;
+  margin-top: 30px;
 }
 .menu .titre::after {
   content: "";
@@ -106,6 +119,21 @@ section {
   opacity: 1;
 }
 
+.menu__entrees .menu__carte {
+  opacity: 0;
+  animation: apparition 0.5s linear forwards;
+}
+
+.menu__plats .menu__carte {
+  opacity: 0;
+  animation: apparition 0.5s linear forwards 300ms;
+}
+
+.menu__desserts .menu__carte {
+  opacity: 0;
+  animation: apparition 0.5s linear forwards 600ms;
+}
+
 .menu__liste {
   display: flex;
   flex-direction: column;
@@ -113,35 +141,40 @@ section {
 }
 .menu__liste .menu__carte {
   display: flex;
-  flex-direction: column;
   overflow: hidden;
   cursor: pointer;
   background-color: white;
   border-radius: 15px;
-  padding: 1.125rem;
   box-shadow: 0px 5px 15px #d4d4d4;
-  animation: slide in 4s cubic-bezier(0.5, 1, 0.89, 1) backward;
 }
-.menu__liste .menu__carte .menu__carte--body {
+.menu__liste .menu__carte .menu__carte--bodyinfo {
   flex: 1;
-  min-width: 0;
+  padding: 1.125rem;
+  display: flex;
+  flex-direction: column;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
-.menu__liste .menu__carte .menu__carte--body .menu__carte--titre {
+.menu__liste .menu__carte .menu__carte--bodyinfo .menu__carte--titre {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   margin-bottom: 5px;
 }
-.menu__liste .menu__carte .menu__carte--info {
+.menu__liste .menu__carte .menu__carte--bodyinfo .menu__carte--info {
   display: flex;
   align-items: center;
   gap: 1rem;
 }
-.menu__liste .menu__carte .menu__carte--info .menu__carte--description {
+.menu__liste .menu__carte .menu__carte--bodyinfo .menu__carte--info .menu__carte--description {
   flex: 1;
   font-size: 1rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
-.menu__liste .menu__carte .menu__carte--info .menu__carte--prix {
+.menu__liste .menu__carte .menu__carte--bodyinfo .menu__carte--info .menu__carte--prix {
   font-weight: 500;
 }
 .menu__liste .menu__carte .menu__carte--check {
@@ -157,6 +190,57 @@ section {
 }
 .menu__liste .menu__carte .menu__carte--check .menu__carte--check-icone {
   transition: transform 0.2s 0.1s cubic-bezier(0.11, 0, 0.5, 0);
+}
+.menu__liste .menu__carte:hover .menu__carte--check {
+  margin-right: 0;
+}
+.menu__liste .menu__carte:hover .fa-circle-check {
+  animation: rotation 1s;
+}
+
+@keyframes apparition {
+  0% {
+    opacity: 0;
+    transform: translateY(20%);
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes rotation {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.commander {
+  margin: auto;
+  width: 210px;
+  height: 50px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  background: linear-gradient(to bottom right, #f074da, #9356dc);
+  /* dégradé couleur */
+  border-radius: 50px;
+  box-shadow: 0px 5px 15px #d4d4d4;
+}
+.commander a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  border-radius: 50px;
+}
+.commander a p {
+  color: white;
+  font-size: 15px;
+  margin: 0;
+}
+
+.commander:hover {
+  filter: brightness(1.05);
+  transition: all 500ms;
+  box-shadow: 0px 5px 15px #a7a7a7;
 }
 
 footer {
