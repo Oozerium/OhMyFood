@@ -1,25 +1,28 @@
-.menu__carte{
+.menu__carte {
     display: flex;
     flex-direction: row;
 
 }
 
 
-.menu__carte{
+.menu__carte {
     overflow: hidden;
-    .menu__entrees{
+
+    .menu__entrees {
         flex: 1;
         padding-right: 10px;
         overflow: hidden;
         padding: 20px;
     }
-    .menu__plats{
+
+    .menu__plats {
         flex: 1;
         padding-right: 10px;
         overflow: hidden;
         padding: 20px;
     }
-    .menu__desserts{
+
+    .menu__desserts {
         flex: 1;
         padding-right: 10px;
         overflow: hidden;

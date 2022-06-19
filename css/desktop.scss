@@ -1,32 +1,35 @@
-.fonctionnement ul{
-    display: flex; 
-    li{
+.fonctionnement ul {
+    display: flex;
+
+    li {
         flex: 1;
-        
+
         margin-right: 20px;
     }
 }
 
-#restaurant{
+#restaurant {
     padding-right: 0;
     padding-left: 0;
-    .titre{
+
+    .titre {
         padding-left: 20px;
     }
 }
 
-.restaurant__cartes{
+.restaurant__cartes {
     display: flex;
     justify-content: space-between;
-    flex-wrap: wrap;    
+    flex-wrap: wrap;
     padding-left: 20px;
-    .cartes{
+
+    .cartes {
         margin-bottom: 0px;
     }
-    a{
+
+    a {
         width: 47.9%;
         margin-bottom: 20px;
         margin-right: 20px;
     }
 }
-

@@ -1,69 +1,73 @@
-*{
-    margin: 0;  
+* {
+    margin: 0;
     padding: 0;
 }
+
 $couleur-primaire: #f6f6f6;
 $couleur-secondaire: #9356dc;
 $couleur-tertiaire: #f074da;
 $couleur-quaternaire: #99E2D0;
 
-@mixin texte-moyen{
-    font-size: 18px; 
+@mixin texte-moyen {
+    font-size: 18px;
 }
 
 @mixin ombre {
-    box-shadow: 0px 5px 15px  #d4d4d4   ;
+    box-shadow: 0px 5px 15px #d4d4d4;
 }
 
-html
-{
+html {
     scroll-behavior: smooth;
     z-index: 10;
 }
 
-body{
+body {
     font-family: 'Raleway', sans-serif;
     font-family: 'Roboto', sans-serif;
-    
+
 }
 
-a{
+a {
     text-decoration: none;
 }
-a:link{
+
+a:link {
     color: inherit;
 }
 
-a:visited{
+a:visited {
     color: inherit;
 }
 
-.fa-thin{
-    font-family: "Font Awesome 6 Free"; 
+.fa-thin {
+    font-family: "Font Awesome 6 Free";
 }
 
-.fleche-gauche{
+.fleche-gauche {
     position: absolute;
     top: 25px;
     left: 20px;
     font-size: 20px;
-    &:hover{
+
+    &:hover {
         transform: scale(1.1);
         transition-duration: 500ms;
     }
 }
 
 
-.header__logo{
+.header__logo {
     width: 170px;
     display: block;
     margin: auto;
     margin-top: 20px;
     margin-bottom: 15px;
 }
-section{
+
+section {
     position: relative;
 }
+
 .lpdg {
     height: 230px;
     width: 100%;
@@ -71,22 +75,24 @@ section{
     position: absolute;
 }
 
-.menu{
+.menu {
     display: flex;
     flex-direction: column;
     background-color: $couleur-primaire;
     top: 200px;
     position: relative;
     padding: 0 20px 0 20px;
-    margin-bottom:200px;
-    border-radius: 30px 30px 0 0;   
-    h1{
+    margin-bottom: 200px;
+    border-radius: 30px 30px 0 0;
+
+    h1 {
         font-family: 'Shrikhand', cursive;
         font-weight: 200;
         font-size: 28px;
         margin: 30px 40px 0 0;
-    } 
-    .titre{
+    }
+
+    .titre {
         position: relative;
         margin-bottom: 2rem;
         color: #353535;
@@ -95,8 +101,9 @@ section{
         text-transform: uppercase;
         margin-top: 30px;
     }
-    .titre::after{
-        content: '' ;
+
+    .titre::after {
+        content: '';
         position: absolute;
         left: 0;
         bottom: -0.5rem;
@@ -105,204 +112,230 @@ section{
         background-color: $couleur-quaternaire;
 
     }
-    h3{
+
+    h3 {
         font-size: 18px;
         font-weight: 400;
         margin-bottom: 10px;
 
     }
-    .fa-heart{
-        position:absolute;
+
+    .fa-heart {
+        position: absolute;
         right: 25px;
         top: 32px;
         font-size: 22px;
-        transform: scale(1, 1.2) ;
+        transform: scale(1, 1.2);
         transition: font-weight 2s, color 3s;
     }
-    .fas{
+
+    .fas {
         background: linear-gradient(to top right, $couleur-tertiaire, $couleur-secondaire );
         opacity: 0;
         -webkit-background-clip: text;
         background-clip: text;
-        -webkit-text-fill-color:transparent;
+        -webkit-text-fill-color: transparent;
         transition: all 300ms ease-in-out;
     }
-    .fas:hover{
+
+    .fas:hover {
         opacity: 1;
     }
 }
 
- 
-.menu__entrees{
-    .menu__carte{
+
+.menu__entrees {
+    .menu__carte {
         opacity: 0;
         animation: apparition .5s linear forwards;
     }
 }
 
-.menu__plats{
-    .menu__carte{
+.menu__plats {
+    .menu__carte {
         opacity: 0;
         animation: apparition .5s linear forwards 300ms;
-     }
+    }
 }
 
-.menu__desserts{
-    .menu__carte{
+.menu__desserts {
+    .menu__carte {
         opacity: 0;
         animation: apparition .5s linear forwards 600ms;
-     }
+    }
 }
 
 
 
-.menu__liste{
+.menu__liste {
     display: flex;
     flex-direction: column;
     gap: 1.125rem;
- 
-    .menu__carte{
+
+    .menu__carte {
         display: flex;
-        
+
         overflow: hidden;
         cursor: pointer;
         background-color: white;
         border-radius: 15px;
         @include ombre();
-  
- 
-        .menu__carte--bodyinfo{
+
+
+        .menu__carte--bodyinfo {
             flex: 1;
             padding: 1.125rem;
             display: flex;
-            flex-direction: column; 
+            flex-direction: column;
             white-space: nowrap;
             overflow: hidden;
-            text-overflow: ellipsis;   
-                  
-                .menu__carte--titre{
+            text-overflow: ellipsis;
+
+            .menu__carte--titre {
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                margin-bottom: 5px;
+            }
+
+            .menu__carte--info {
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+
+                .menu__carte--description {
+                    flex: 1;
+                    font-size: 1rem;
                     white-space: nowrap;
                     overflow: hidden;
                     text-overflow: ellipsis;
-                    margin-bottom: 5px;
+
                 }
-            
-                .menu__carte--info{
-                    display: flex;
-                    align-items: center;
-                    gap: 1rem;
-                    .menu__carte--description{
-                        flex: 1;
-                        font-size: 1rem;
-                        white-space: nowrap;
-                        overflow: hidden;
-                        text-overflow: ellipsis;
-                        
-                    }
-                    .menu__carte--prix{
-                        font-weight: 500;
-                    }   
-                }      
-        }    
-            .menu__carte--check{
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                width: 4.5rem;
-                margin-right: -4.5rem;
-                background-color: $couleur-quaternaire;
-                color: white;
-                font-size: 1.5rem;
-                transition: margin .3s cubic-bezier(0.11, 0, 0.5, 0);
-                
-                
-                .menu__carte--check-icone{
-                    transition: transform .2s .1s cubic-bezier(0.11, 0, 0.5, 0);
-                
+
+                .menu__carte--prix {
+                    font-weight: 500;
                 }
-            }  
-              
-    } 
-    .menu__carte:hover .menu__carte--check{
-        margin-right: 0;
-        
+            }
+        }
+
+        .menu__carte--check {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 4.5rem;
+            margin-right: -4.5rem;
+            background-color: $couleur-quaternaire;
+            color: white;
+            font-size: 1.5rem;
+            transition: margin .3s cubic-bezier(0.11, 0, 0.5, 0);
+
+
+            .menu__carte--check-icone {
+                transition: transform .2s .1s cubic-bezier(0.11, 0, 0.5, 0);
+
+            }
+        }
+
     }
-    .menu__carte:hover .fa-circle-check{
+
+    .menu__carte:hover .menu__carte--check {
+        margin-right: 0;
+
+    }
+
+    .menu__carte:hover .fa-circle-check {
         animation: rotation 1s;
-    }  
+    }
 }
 
 @keyframes apparition {
-    0% {opacity: 0;
-    transform: translateY(20%);}
-    100% {opacity: 1;}   
+    0% {
+        opacity: 0;
+        transform: translateY(20%);
+    }
+
+    100% {
+        opacity: 1;
+    }
 }
 
-@keyframes rotation{
-    100%{transform: rotate(360deg);}
+@keyframes rotation {
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
-.commander{
+.commander {
     margin: auto;
     width: 210px;
     height: 50px;
     margin-top: 50px;
     margin-bottom: 50px;
-    background: linear-gradient(to bottom right, $couleur-tertiaire, $couleur-secondaire ); /* dégradé couleur */
+    background: linear-gradient(to bottom right, $couleur-tertiaire, $couleur-secondaire );
+    /* dégradé couleur */
     border-radius: 50px;
     @include ombre();
-   a{  
-       display: flex;
-       justify-content: center;
-       align-items: center;
-       width: 100%;
-       height: 100%;
-       border-radius: 50px;
-       p{
-           color: white;
-           font-size: 15px;
-           margin: 0;
+
+    a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        border-radius: 50px;
+
+        p {
+            color: white;
+            font-size: 15px;
+            margin: 0;
         }
     }
 }
-.commander:hover{
+
+.commander:hover {
     filter: brightness(1.05);
     transition: all 500ms;
-    box-shadow: 0px 5px 15px  #a7a7a7   ;
+    box-shadow: 0px 5px 15px #a7a7a7;
 }
 
-footer{
+footer {
     background-color: #353535;
     color: white;
     padding-left: 20px;
     padding-bottom: 20px;
     padding: 20px 20px 20px 20px;
-    .footer__logo{
+
+    .footer__logo {
         font-family: 'Shrikhand';
         font-size: 1.25rem;
         font-weight: 400;
     }
-    ul{
+
+    ul {
         list-style-type: none;
         padding: 0;
         font-size: 15px;
         margin-top: 20px;
     }
-    li{
+
+    li {
         padding-bottom: 10px;
     }
-    li:hover{
+
+    li:hover {
         text-decoration: underline;
     }
-    .fa-solid{
+
+    .fa-solid {
         font-size: 13px;
         transform: scale(0.9, 1);
         margin-right: 10px;
     }
-    .fa-handshake-angle{
+
+    .fa-handshake-angle {
         position: relative;
         right: 2px;
         margin-right: 5px;
         transform: scale(0.7, 1);
     }
-    }
+}
